@@ -39,6 +39,6 @@ This will create four files in the current directory:
 To import, simply create a vertex collection `patents` and an edge
 collection `citations` and use
 
-    docker run -it -v `pwd`:/data arangodb/arangodb arangoimp --endpoint tcp://<IP>:<PORT> --collection patents --file /data/patents_arangodb.csv --type csv
-    docker run -it -v `pwd`:/data arangodb/arangodb arangoimp --endpoint tcp://<IP>:<PORT> --collection citations --file /data/citations_arangodb.csv --type csv
+    docker run -it --net=host -v `pwd`:/data arangodb/arangodb arangoimp --server.endpoint tcp://<IP>:<PORT> --collection patents --file /data/patents_arangodb.csv --type csv
+    docker run -it --net=host -v `pwd`:/data arangodb/arangodb arangoimp --server.endpoint tcp://<IP>:<PORT> --collection citations --file /data/citations_arangodb.csv --type csv
 
